@@ -42,17 +42,24 @@ const CompleteBox = styled.div`
   border-radius: 10px;
   overflow: auto;
 `;
-
 class Archive extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      month: "",
+    state = {
       day: "",
+      month: "",
       year: "",
       archive: ["hello"]
     };
     this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(property, e) {
+    this.setState({ ...this.state, [property]: e.value });
+  }
+
+  select(e) {
+    alert(e.target.value);
   }
 
   componentDidMount() {
@@ -71,14 +78,6 @@ class Archive extends Component {
       .then(res => this.setState({ archive: res.data }));
   }
 
-  handleChange(property, e) {
-    this.setState({ ...this.state, [property]: e.value });
-  }
-
-  select(e) {
-    alert(e.target.value);
-  }
-
   render() {
     return (
       <>
@@ -94,6 +93,7 @@ class Archive extends Component {
               value={this.state.month}
               placeholder="Month"
             />
+
             <Dropdown
               options={Day}
               onChange={e => this.handleChange("day", e)}
