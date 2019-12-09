@@ -1,8 +1,5 @@
 import React from "react";
-import {
-  MainContainer,
-  Row
-} from "../components/global/Sections.jsx/index.js.js";
+import { MainContainer, Row } from "../components/global/Sections.jsx";
 import Form from "../components/task-list/index.jsx";
 import styled from "styled-components";
 import ArchiveImg from "../assets/20x20.png";
