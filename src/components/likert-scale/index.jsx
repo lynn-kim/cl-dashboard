@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.css";
 import styled from "styled-components";
-import Option from "./LikertOptions/Option";
+import Option from "./likert-options/index.jsx";
 import Prompts from "../../constants/prompts";
 import axios from "axios";
 
