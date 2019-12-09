@@ -2,7 +2,7 @@ import React from "react";
 import Form from "../components/task-list/index.jsx";
 import Likert from "../components/likert-scale/index.jsx";
 import styled from "styled-components";
-import { MainContainer, Row } from "../components/Global/Sections.jsx";
+import { MainContainer, Row } from "../components/global/Sections.jsx";
 
 const ListContainer = styled.div`
   display: flex;

@@ -1,7 +1,7 @@
-import DailyTasks from "../pages/daily-tasks";
-import SelfEval from "../pages/self-eval";
-import Goals from "../pages/goals";
-import Resources from "../pages/resources";
+import DailyTasks from "../pages/Daily-Tasks";
+import SelfEval from "../pages/Self-Evaluation";
+import Goals from "../pages/Goals";
+import Resources from "../pages/Resources";
 
 export const Pages = [
   {

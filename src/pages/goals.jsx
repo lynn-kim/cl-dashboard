@@ -1,5 +1,5 @@
 import React from "react";
-import { MainContainer, Row } from "../components/Global/Sections";
+import { MainContainer, Row } from "../components/global/Sections";
 import styled from "styled-components";
 import GoalList from "../components/goals-list/index.jsx";
 import ProgressBar from "../components/progress-bar/index.jsx";
