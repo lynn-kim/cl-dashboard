@@ -21,20 +21,22 @@ class ProgressBar extends React.Component {
   componentDidMount() {
     this.updatePercentage();
   }
+
+  //passing through length of completed items and items
   updatePercentage = () => {
     const { completedItems, items } = this.props;
-    if (items + completedItems === 0) {
+    if (!items && !completedItems) {
       return this.setState({ percentage: 0 });
     }
     // Completed items divided by the total number of items (items + completed items)
     // and Multipled by 100 to make decimal into an integer
-    const new_percentage = (completedItems / (items + completedItems)) * 100;
+    const newPercentage = (completedItems / (items + completedItems)) * 100;
 
     // Floored so you don't get numbers like 33.333, just 33
-    const floored_new_percentage = Math.floor(new_percentage);
+    const roundedNewPercentage = Math.floor(newPercentage);
 
     this.setState({
-      percentage: floored_new_percentage
+      percentage: roundedNewPercentage
     });
   };
 

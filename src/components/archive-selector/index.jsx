@@ -8,7 +8,6 @@ import * as moment from "moment";
 import axios from "axios";
 
 let date = moment().format("MMM Do YY");
-// let d = new Date();
 
 const ArchiveContainer = styled.div`
   display: flex;
@@ -49,14 +48,14 @@ class Archive extends Component {
       month: "",
       day: "",
       year: "",
-      archive: ["hello"]
+      archive: []
     };
     this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
     // should pass in date selected from drop down
-    this.getArchives("Dec 9th 19");
+    this.getArchives(date);
   }
 
   setDate() {}
