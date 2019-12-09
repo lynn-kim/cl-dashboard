@@ -1,5 +1,5 @@
 import React from "react";
-import GoalItems from "./ListItems/GoalItems.jsx";
+import GoalItems from "./list-items/index.jsx";
 import "./index.css";
 
 class GoalList extends React.Component {
