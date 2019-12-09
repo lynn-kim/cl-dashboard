@@ -2,22 +2,11 @@ var moment = require("moment");
 var Task = require("../models/task");
 
 // initialize date filter
-<<<<<<< HEAD
-var filter = moment().format("MMM Do YY");
-
-const setFilter = (req, res) => {
-  // filter = req.body;
-  console.log(filter);
-  // return Task.find({ date: filter })
-  //   .then(tasks => res.json(tasks))
-  // .catch(error => res.json({ message: "Error" }));
-=======
 const current = moment().format("MMM Do YY");
 var filter;
 
 const setFilter = req => {
   filter = req.body.filter;
->>>>>>> 0b6625929befe758bcaf4a72c94fb3fa7c85b52e
 };
 
 const add = (req, res) => {

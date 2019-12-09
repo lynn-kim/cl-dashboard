@@ -22,7 +22,6 @@ const Row = styled.div`
 const Title = styled.div`
   display: flex;
   width: 50%;
-  /* border: 1px solid #99a3ad; */
 `;
 const ArcImg = styled.img`
   display: flex;
