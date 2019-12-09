@@ -12,7 +12,6 @@ const Col1Container = styled.div`
   height: 80vh;
   width: 60%;
   margin-right: 1.5em;
-  /* // border: 1px solid #99a3ad; */
 `;
 
 const Col2Container = styled.div`
@@ -20,7 +19,6 @@ const Col2Container = styled.div`
   flex-direction: column;
   height: 50vh;
   width: 40%;
-  /* // border: 1px solid #99a3ad; */
 `;
 
 const GoogleReminders = styled.div`
