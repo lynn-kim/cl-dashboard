@@ -19,8 +19,8 @@ class Archive extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(property, value) {
-    this.setState({ ...this.state, [property]: value });
+  handleChange(property, e) {
+    this.setState({ ...this.state, [property]: e.value });
   }
 
   select(e) {
@@ -31,21 +31,21 @@ class Archive extends Component {
     return (
       <ArchiveContainer>
         <Dropdown
-          className="test1"
-          options={Day}
-          onChange={e => this.handleChange("day", e.target.value)}
-          placeholder="Day"
-        />
-        <Dropdown
-          className="test2"
           options={Month}
-          onChange={e => this.handleChange("month", e.target.value)}
+          onChange={e => this.handleChange("month", e)}
+          value={this.state.month}
           placeholder="Month"
         />
         <Dropdown
-          className="test3"
+          options={Day}
+          onChange={e => this.handleChange("day", e)}
+          value={this.state.day}
+          placeholder="Day"
+        />
+        <Dropdown
           options={Year}
-          onChange={e => this.handleChange("year", e.target.value)}
+          onChange={e => this.handleChange("year", e)}
+          value={this.state.year}
           placeholder="Year"
         />
       </ArchiveContainer>
