@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import axios from "axios";
 import "./index.css";
-import * as moment from "moment";
 
 const ListCard = styled.div`
   margin: 3vh 0;
@@ -21,7 +20,7 @@ class Form extends React.Component {
     super(props);
     this.state = {
       name: this.props.name,
-      items: [{}],
+      items: [],
       value: ""
     };
   }
@@ -51,7 +50,7 @@ class Form extends React.Component {
   };
 
   appendItem() {
-    const path = "/" + this.state.name + "/add-items";
+    const path = "/" + this.state.name + "/items";
 
     axios
       .post(path, {
@@ -67,7 +66,7 @@ class Form extends React.Component {
   }
 
   listUpdate = () => {
-    const path = "/" + this.state.name + "/get-items";
+    const path = "/" + this.state.name + "/items";
     axios.get(path).then(res => {
       this.setState({ items: res.data });
     });
@@ -82,7 +81,7 @@ class Form extends React.Component {
 
   // remove items from list
   remove = (e, toRemove) => {
-    const path = "/" + this.state.name + "/remove-items";
+    const path = "/" + this.state.name + "/items";
     axios
       .delete(path, { data: toRemove })
       .then(res => {

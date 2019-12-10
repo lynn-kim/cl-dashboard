@@ -13,7 +13,6 @@ const submit = (req, res) => {
       res.json({ message: "successfully submitted evaluation" })
     )
     .catch(error => {
-      console.log(error);
       return res.json({ message: "error" });
     });
 };

@@ -1,5 +1,5 @@
 import Dropdown from "react-dropdown";
-import React, { Component, PropTypes } from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
 import "./index.css";
 import ArchiveImg from "../../assets/20x20.png";
@@ -7,11 +7,8 @@ import { Month, Day, Year } from "../../constants/archive";
 import * as moment from "moment";
 import axios from "axios";
 
-let date = moment().format("MMM Do YY");
-
 const ArchiveContainer = styled.div`
   display: flex;
-  // flex-direction: column;
   width: 45%;
   justify-content: space-between;
 `;
@@ -44,37 +41,45 @@ const CompleteBox = styled.div`
 class Archive extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      month: "",
-      day: "",
-      year: "",
+      month: moment().format("MMM"),
+      day: moment().format("Do"),
+      year: moment().format("YY"),
       archive: []
     };
-    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
     // should pass in date selected from drop down
-    this.getArchives(date);
+    this.getArchives();
   }
 
-  setDate() {}
+  getDateAsString({ day, month, year }) {
+    return `${month} ${day} ${year}`;
+  }
 
-  getArchives(date) {
-    axios.post("/daily-tasks/set-date", {
-      filter: date
-    });
+  getArchives() {
+    let date = this.getDateAsString(this.state);
+
     axios
-      .get("/daily-tasks/get-archive")
+      .get("/daily-tasks/items/archive", { params: { date } })
       .then(res => this.setState({ archive: res.data }));
   }
 
   handleChange(property, e) {
     this.setState({ ...this.state, [property]: e.value });
+
+    this.getArchives();
   }
 
-  select(e) {
-    alert(e.target.value);
+  componentDidUpdate(prevProps, prevState) {
+    let prevDate = this.getDateAsString(prevState);
+    let newDate = this.getDateAsString(this.state);
+
+    if (newDate !== prevDate) {
+      this.getArchives();
+    }
   }
 
   render() {

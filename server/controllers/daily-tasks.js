@@ -1,17 +1,9 @@
 var moment = require("moment");
 var Task = require("../models/task");
 
-// initialize date filter
-const current = moment().format("MMM Do YY");
-var filter;
-
-const setFilter = req => {
-  filter = req.body.filter;
-};
-
 const add = (req, res) => {
   var newTask = new Task(req.body);
-  newTask.date = current;
+  newTask.date = moment().format("MMM Do YY");
   return newTask
     .save()
     .then(createdTask => res.json(createdTask))
@@ -22,13 +14,15 @@ const add = (req, res) => {
 };
 
 const get = (req, res) => {
-  return Task.find({ date: current })
+  return Task.find({ date: moment().format("MMM Do YY") })
     .then(tasks => res.json(tasks))
     .catch(error => res.json({ message: "Error" }));
 };
 
 const getArchive = (req, res) => {
-  return Task.find({ date: filter })
+  const { date } = req.query;
+
+  return Task.find({ date })
     .then(tasks => res.json(tasks))
     .catch(error => res.json({ message: "Error" }));
 };
@@ -54,6 +48,5 @@ module.exports = {
   get,
   add,
   remove,
-  setFilter,
   getArchive
 };
