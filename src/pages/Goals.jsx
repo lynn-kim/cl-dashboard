@@ -153,8 +153,8 @@ class Goals extends React.Component {
               <h5>Goal Tracker</h5>
               <ProgressBarContainer>
                 <ProgressBar
-                  items={this.state.items.length}
-                  completedItems={this.state.completedItems.length}
+                  itemsLen={this.state.items.length}
+                  completedItemsLen={this.state.completedItems.length}
                 />
               </ProgressBarContainer>
             </TrackerContainer>

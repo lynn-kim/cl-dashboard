@@ -24,13 +24,14 @@ class ProgressBar extends React.Component {
 
   //passing through length of completed items and items
   updatePercentage = () => {
-    const { completedItems, items } = this.props;
-    if (!items && !completedItems) {
+    const { completedItemsLen, itemsLen } = this.props;
+    if (!itemsLen && !completedItemsLen) {
       return this.setState({ percentage: 0 });
     }
     // Completed items divided by the total number of items (items + completed items)
     // and Multipled by 100 to make decimal into an integer
-    const newPercentage = (completedItems / (items + completedItems)) * 100;
+    const newPercentage =
+      (completedItemsLen / (itemsLen + completedItemsLen)) * 100;
 
     // Floored so you don't get numbers like 33.333, just 33
     const roundedNewPercentage = Math.floor(newPercentage);
