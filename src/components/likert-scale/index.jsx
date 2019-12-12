@@ -4,6 +4,8 @@ import styled from "styled-components";
 import Option from "./likert-options/index.jsx";
 import Prompts from "../../constants/prompts";
 import axios from "axios";
+import { WEEK } from "../../constants/date";
+import * as moment from "moment";
 
 let submitted = false; // add a condition for when the week resets
 
@@ -54,7 +56,7 @@ class Likert extends React.Component {
 
   saveValues() {
     axios.post("/evaluation/submit", {
-      week: "1st week of December",
+      week: moment().format(WEEK),
       scores: this.state.promptData
     });
   }
