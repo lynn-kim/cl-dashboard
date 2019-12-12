@@ -11,9 +11,10 @@ class ProgressBar extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.items !== this.props.items) {
-      this.updatePercentage();
-    } else if (prevProps.completedItems !== this.props.completedItems) {
+    if (
+      prevProps.itemsLen !== this.props.itemsLen ||
+      prevProps.completedItemsLen !== this.props.completedItemsLen
+    ) {
       this.updatePercentage();
     }
   }
