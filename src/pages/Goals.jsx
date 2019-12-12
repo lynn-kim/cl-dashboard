@@ -47,7 +47,10 @@ const CompleteBox = styled.div`
   color: #313660;
   font-size: 1em;
   margin: 3vh 0;
-  padding: 10px;
+  margin-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
   width: 45%;
   height: 25vh;
   max-height: 100%;
@@ -159,6 +162,7 @@ class Goals extends React.Component {
           <Row>
             <h5>Completed Goals</h5>
           </Row>
+          <h7>Click on an item below to mark it as incomplete</h7>
           <CompleteBox>
             {this.state.completedItems.map((value, i) => (
               <h6

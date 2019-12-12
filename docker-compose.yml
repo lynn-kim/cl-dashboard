@@ -6,7 +6,7 @@ services:
     build: ./docker/mongo
     restart: always
     ports:
-      - "27017:27018"
+      - "27018:27017"
 
 networks:
   default:

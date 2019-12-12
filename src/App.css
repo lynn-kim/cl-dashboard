@@ -62,6 +62,14 @@ h6 {
   list-style-position: inside;
 }
 
+h7 {
+  color: #83909f;
+  font-size: 0.9em;
+  padding-top: 10px;
+  padding-bottom: 0;
+  font-weight: 400;
+}
+
 p {
   font-family: "Signika";
   color: black;

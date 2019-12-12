@@ -65,7 +65,7 @@ class Likert extends React.Component {
         <section>
           {Prompts.map((prompt, i) => (
             <Option
-              sendValues={this.getValues}
+              setOptionValues={this.getValues}
               key={i}
               id={i}
               prompt={prompt}

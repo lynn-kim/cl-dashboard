@@ -1,6 +1,6 @@
 .item {
   display: inline-block;
-  padding: 10px;
+  padding-right: 10px;
   padding-top: 20px;
   padding-bottom: 15px;
   width: 47%;
@@ -13,41 +13,41 @@
 
 .likert-option:nth-child(1):enabled {
   /* margin-left: 0px !important; */
-  color: #784b5b;
-  border-color: #784b5b;
+  color: #ba5f65;
+  border-color: #ba5f65;
 }
 .likert-option:nth-child(2):enabled {
-  color: #eb606a;
-  border-color: #eb606a;
+  color: #cb8589;
+  border-color: #cb8589;
 }
 .likert-option:nth-child(3):enabled {
-  color: #f4b5a6;
-  border-color: #f4b5a6;
+  color: #97a470;
+  border-color: #97a470;
 }
 
 .likert-option:nth-child(4):enabled {
-  color: #f2a33a;
-  border-color: #f2a33a;
+  color: #66743d;
+  border-color: #66743d;
 }
 
 .likert-option:hover:nth-child(1):enabled {
-  border-color: #784b5b;
-  background: #784b5b;
+  border-color: #ba5f65;
+  background: #ba5f65;
 }
 
 .likert-option:hover:nth-child(2):enabled {
-  border-color: #eb606a;
-  background: #eb606a;
+  border-color: #cb8589;
+  background: #cb8589;
 }
 
 .likert-option:hover:nth-child(3):enabled {
-  border-color: #f4b5a6;
-  background: #f4b5a6;
+  border-color: #97a470;
+  background: #97a470;
 }
 
 .likert-option:hover:nth-child(4):enabled {
-  border-color: #f2a33a;
-  background: #f2a33a;
+  border-color: #66743d;
+  background: #66743d;
 }
 
 .likert-option {
@@ -85,10 +85,10 @@
 }
 
 .submit-button:enabled {
-  color: #784b5b;
+  color: #97a470;
 
   text-align: right;
-  border-color: #784b5b;
+  border-color: #97a470;
 }
 .submit-button {
   color: gray;
@@ -104,6 +104,6 @@
 .submit-button:hover:enabled {
   outline: 0;
   color: white !important;
-  background: #784b5b;
+  background: #97a470;
   transition: all 0.3s;
 }

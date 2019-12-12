@@ -40,7 +40,6 @@ class DailyTasks extends React.Component {
         <DateContainer>
           <Row>
             <h5>{d.toLocaleDateString("en-US", options)}</h5>
-            <button onClick={this.setDate}>Yesterday</button>
           </Row>
         </DateContainer>
         <ListContainer>
