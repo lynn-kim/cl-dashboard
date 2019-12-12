@@ -25,7 +25,6 @@ class GoalList extends React.Component {
             completeGoal={this.props.completeGoal}
           />
         </div>
-        {/* <hr /> */}
       </div>
     );
   }

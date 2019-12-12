@@ -57,8 +57,8 @@ h6 {
   margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
-  display: list-item; /* This has to be "list-item"                                               */
-  list-style-type: disc; /* See https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type     */
+  display: list-item;
+  list-style-type: disc;
   list-style-position: inside;
 }
 
