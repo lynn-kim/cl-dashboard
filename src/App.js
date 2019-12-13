@@ -1,4 +1,6 @@
 import "./App.css";
+import "typeface-signika";
+import "typeface-montserrat";
 import React from "react";
 import Header from "./components/global/Header";
 import Navigation from "./components/global/Navigation";

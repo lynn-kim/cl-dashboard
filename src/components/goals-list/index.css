@@ -3,7 +3,8 @@
   font-size: 14px;
   color: #83909f;
   border: transparent;
-  width: 85%;
+  width: 90%;
+  font-weight: 400;
 }
 
 .ListCard {
@@ -30,9 +31,10 @@
 }
 
 .ListCard .theList li {
-  color: #314760;
-  font-size: 14px;
-  padding: 10px;
+  font-family: "Montserrat";
+  font-size: 12.96px;
+  font-weight: 350;
+  color: black;
   border-radius: 5px;
   list-style: none;
   transition: background-color 0.2s ease-out;
@@ -53,13 +55,17 @@ ul.theList {
   border: 0;
   padding: 5px 5px;
   background: transparent;
+  font-family: "Montserrat";
+  font-weight: 300;
 }
 
 .input-field:focus {
   outline: 0;
 }
+
 .input-field::placeholder {
   color: #83909f;
+  font-weight: 300;
 }
 
 .add-button {
@@ -76,6 +82,7 @@ input:focus {
 .remove-button {
   display: inline-block;
   float: right;
+  font-size: 9.36px;
   color: #d38492;
   border: 0;
   margin-right: 10px;
@@ -90,7 +97,7 @@ input:focus {
   display: inline-flex;
   cursor: pointer;
   position: relative;
-  padding: 0px 7px !important;
+  padding-right: 7px !important;
 }
 
 .checkbox > span {
@@ -104,18 +111,10 @@ input:focus {
   -webkit-appearance: none;
   -moz-appearance: none;
   -o-appearance: none;
-  appearance: none;
-  border: 2px solid #314760;
-  border-radius: 4px;
-  outline: none;
+  border: 1px solid #314760;
   transition-duration: 0.3s;
   background-color: #e7eaf3;
   cursor: pointer;
-}
-
-.checkbox > input:checked {
-  border: 1px solid #314760;
-  background-color: #e7eaf3;
 }
 
 .checkbox > input:checked + span::before {
@@ -125,8 +124,4 @@ input:focus {
   border: 2px solid #314760;
   position: absolute;
   top: 0.2rem;
-}
-
-.checkbox > input:active {
-  border: 2px solid #34495e;
 }

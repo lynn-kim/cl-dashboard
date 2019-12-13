@@ -9,7 +9,7 @@ import axios from "axios";
 
 const ArchiveContainer = styled.div`
   display: flex;
-  width: 45%;
+  width: 48%;
   justify-content: space-between;
 `;
 const Row = styled.div`
@@ -27,6 +27,8 @@ const ArcImg = styled.img`
   height: 20px;
 `;
 const CompleteBox = styled.div`
+  font-family: "Montserrat";
+  font-size: 12.96px;
   margin: 3vh 0;
   padding: 10px;
   width: 47%;
@@ -44,7 +46,9 @@ class Archive extends Component {
 
     this.state = {
       month: moment().format("MMM"),
-      day: moment().format("Do"),
+      day: moment()
+        .subtract(1, "days")
+        .format("Do"),
       year: moment().format("YY"),
       archive: []
     };

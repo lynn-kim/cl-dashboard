@@ -7,7 +7,7 @@ h1 {
   justify-content: flex-start;
   color: #313660;
   font-family: "Signika";
-  font-weight: bold;
+  font-weight: 600;
   font-size: 1.7em;
   width: 100%;
   top: 0;
@@ -17,7 +17,7 @@ h1 {
 h2 {
   color: black;
   font-family: "Signika";
-  font-weight: 600;
+  font-weight: 550;
   padding-bottom: 2px;
 }
 
@@ -26,11 +26,12 @@ h3 {
   font-family: "Signika";
   font-size: 1.8em;
   padding-left: 10em;
+  font-weight: 600;
 }
 
 h4 {
   font-family: "Signika";
-  font-weight: bold;
+  font-weight: 500;
   color: black;
   font-size: 1em;
   margin-top: 10px;
@@ -41,33 +42,34 @@ h5 {
   font-family: "Signika";
   color: black;
   font-size: 1.1em;
-  font-weight: 400;
+  font-weight: 500;
   margin-top: 10px;
   margin-bottom: 0;
 }
 
 h6 {
-  font-family: "Signika";
-  color: black;
-  font-size: 0.9em;
+  font-family: "Montserrat";
+  font-size: 12.96px;
   padding: 5px;
-  font-weight: 400;
+  color: black;
+  font-weight: 350;
   margin: 5px;
   margin-block-start: 1em;
   margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
-  display: list-item; /* This has to be "list-item"                                               */
-  list-style-type: disc; /* See https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type     */
+  display: list-item;
+  list-style-type: disc;
   list-style-position: inside;
 }
 
 h7 {
+  font-family: "Montserrat";
   color: #83909f;
-  font-size: 0.9em;
+  font-size: 12px;
   padding-top: 10px;
   padding-bottom: 0;
-  font-weight: 400;
+  font-weight: 350;
 }
 
 p {
@@ -84,7 +86,7 @@ hr {
 a {
   font-family: "Signika";
   padding: 10px 0 0 22px;
-  font-weight: 700;
+  font-weight: 600;
   color: white;
   text-decoration: none;
   height: 30px;
@@ -105,11 +107,15 @@ a:hover {
 }
 
 ul {
-  font-family: "Signika";
+  font-family: "Montserrat";
+  font-size: 0.9em;
   color: black;
+  padding-inline-start: 25px;
 }
 
 li {
   width: 100%;
+  font-weight: 350;
   padding: 5px;
+  font-size: 12.96px;
 }
