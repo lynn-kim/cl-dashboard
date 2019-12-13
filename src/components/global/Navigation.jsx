@@ -37,7 +37,7 @@ const IconImage = styled.img`
 const NameText = styled.h3`
   font-family: "Signika";
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 600;
   color: white;
   align-self: center;
   padding: 0;
@@ -47,6 +47,7 @@ const ProfileContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  padding-left: 25px;
   width: 100px;
 `;
 

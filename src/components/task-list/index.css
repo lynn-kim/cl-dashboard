@@ -24,11 +24,17 @@
   text-align: center;
 }
 
+.add-button:focus {
+  outline: 0 !important;
+}
+
 input:focus {
   outline: 0 !important;
 }
 
 .remove-button {
+  font-family: "Montserrat";
+  font-size: 0.65em;
   display: inline-block;
   float: right;
   color: #d38492;

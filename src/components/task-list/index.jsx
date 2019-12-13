@@ -37,11 +37,9 @@ class Form extends React.Component {
   handleSubmit = e => {
     // check if the task is empty
     if (!this.state.value.replace(/\s/g, "").length) {
-      alert("Cannot add empty task.");
       return;
     }
     this.setState({
-      // items: [...this.state.items, this.state.value],
       value: ""
     });
 
