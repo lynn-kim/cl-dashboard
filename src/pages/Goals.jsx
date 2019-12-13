@@ -1,8 +1,10 @@
 import React from "react";
-import { MainContainer, Row } from "../components/Global/Sections";
+import { MainContainer, Row } from "../components/global/Sections";
 import styled from "styled-components";
-import GoalList from "../components/GoalsList/index.jsx";
-import ProgressBar from "../components/ProgressBar/index.jsx";
+import GoalList from "../components/goals-list/index.jsx";
+import ProgressBar from "../components/progress-bar/index.jsx";
+import axios from "axios";
+import { isTSExpressionWithTypeArguments } from "@babel/types";
 
 const DateContainer = styled.div`
   display: flex;
@@ -45,10 +47,14 @@ const CompleteBox = styled.div`
   color: #313660;
   font-size: 1em;
   margin: 3vh 0;
-  padding: 10px;
-  width: 35.5%;
+  margin-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  width: 45%;
   height: 25vh;
   max-height: 100%;
+  background-color: white;
   border: 1px solid #99a3ad;
   border-radius: 10px;
   overflow: auto;
@@ -73,49 +79,52 @@ class Goals extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.listUpdate();
+  }
+
   addItem = e => {
     e.preventDefault();
     const element = document.getElementById("goalInput");
 
     if (element.value !== "") {
       var newItem = {
-        text: element.value,
-        key: Date.now()
+        goal: element.value,
+        key: Date.now(),
+        date: Date.now(), // change this to MMM DD YY later
+        complete: false
       };
 
-      this.setState(prevState => {
-        return {
-          items: prevState.items.concat(newItem)
-        };
-      });
-
+      axios.post("/goals/add-goals", newItem);
+      this.listUpdate();
       element.value = "";
     }
+  };
 
-    console.log(this.state.items);
+  listUpdate = () => {
+    axios.get("/goals/get-goals").then(res => {
+      this.setState({
+        items: res.data
+      });
+    });
+    axios.get("/goals/complete").then(res => {
+      this.setState({
+        completedItems: res.data
+      });
+    });
   };
 
   completeGoal = goal => {
-    var filteredItems = this.state.items.filter(function(item) {
-      return item.key !== goal.key;
-    });
-
-    this.setState({
-      ...this.state,
-      items: filteredItems,
-      completedItems: [...this.state.completedItems, goal]
-    });
+    var newComplete = !goal.complete;
+    axios.put("/goals/edit-goals/" + goal._id, { goal, newComplete });
+    this.listUpdate();
   };
 
   deleteGoal = goal => {
-    var filteredItems = this.state.items.filter(function(item) {
-      return item.key !== goal.key;
+    axios.delete("/goals/remove-goals", {
+      data: goal
     });
-
-    this.setState({
-      ...this.state,
-      items: filteredItems
-    });
+    this.listUpdate();
   };
 
   render() {
@@ -123,7 +132,7 @@ class Goals extends React.Component {
       <div>
         <MainContainer>
           <Row>
-            <h2>Weekly Goals</h2>
+            <h2>Keep Track of Your Goals</h2>
           </Row>
           <hr />
           <DateContainer>
@@ -133,7 +142,6 @@ class Goals extends React.Component {
           </DateContainer>
           <TopContainer>
             <ListContainer>
-              {/* <List placeholder={"Add a goal"} /> */}
               <GoalList
                 items={this.state.items}
                 completeGoal={this.completeGoal}
@@ -145,8 +153,8 @@ class Goals extends React.Component {
               <h5>Goal Tracker</h5>
               <ProgressBarContainer>
                 <ProgressBar
-                  items={this.state.items}
-                  completedItems={this.state.completedItems}
+                  itemsLen={this.state.items.length}
+                  completedItemsLen={this.state.completedItems.length}
                 />
               </ProgressBarContainer>
             </TrackerContainer>
@@ -154,9 +162,15 @@ class Goals extends React.Component {
           <Row>
             <h5>Completed Goals</h5>
           </Row>
+          <h7>Click on an item below to mark it as incomplete</h7>
           <CompleteBox>
             {this.state.completedItems.map((value, i) => (
-              <h6 key={`${value.text}-${i}`}>{value.text}</h6>
+              <h6
+                key={`${value.goal}-${i}`}
+                onClick={() => this.completeGoal(value)}
+              >
+                {value.goal}
+              </h6>
             ))}
           </CompleteBox>
         </MainContainer>

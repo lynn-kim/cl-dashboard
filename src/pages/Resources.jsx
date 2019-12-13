@@ -1,5 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import GoogleRemindersImg from "../assets/470x248.svg";
+import JiraRemindersImg from "../assets/448x305.svg";
+import MavenLinkHoursImg from "../assets/363x447.png";
 
 const WidgetContainer = styled.div`
   display: flex;
@@ -12,7 +15,6 @@ const Col1Container = styled.div`
   height: 80vh;
   width: 60%;
   margin-right: 1.5em;
-  // border: 1px solid #99a3ad;
 `;
 
 const Col2Container = styled.div`
@@ -20,18 +22,31 @@ const Col2Container = styled.div`
   flex-direction: column;
   height: 50vh;
   width: 40%;
-  // border: 1px solid #99a3ad;
+`;
+
+const GoogleRemindersImage = styled.img`
+  display: flex;
+`;
+
+const JiraRemindersImage = styled.img`
+  display: flex;
+  height: 90%;
+`;
+
+const MavenLinkHoursImage = styled.img`
+  display: flex;
+  height: 50vh;
 `;
 
 const GoogleReminders = styled.div`
   color: #313660;
   font-size: 1em;
-  padding: 10px;
+  padding-top: 5px;
   width: 85%;
   height: 20vh;
   margin-bottom: 2.5em;
   max-height: 100%;
-  // border: 1px solid #99a3ad;
+  background-color: #fafafe;
   border-radius: 10px;
   overflow: auto;
 `;
@@ -40,9 +55,9 @@ const JiraReminders = styled.div`
   font-size: 1em;
   padding: 10px;
   width: 85%;
-  height: 34vh;
+  height: 40vh;
   max-height: 100%;
-  // border: 1px solid #99a3ad;
+  background-color: #fafafe;
   border-radius: 10px;
   overflow: auto;
 `;
@@ -50,13 +65,11 @@ const JiraReminders = styled.div`
 const MavenLinkHours = styled.div`
   color: #313660;
   font-size: 1em;
-  padding: 10px;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   width: 85%;
-  height: 45vh;
+  height: 50vh;
   max-height: 100%;
-  border: 1px solid #99a3ad;
-  border-radius: 10px;
+  background-color: #fafafe;
   overflow: auto;
 `;
 
@@ -87,18 +100,23 @@ class Resources extends React.Component {
           <Col1Container>
             <div>
               <h2>Google Reminders</h2>
-              <GoogleReminders></GoogleReminders>
+              <GoogleReminders>
+                <GoogleRemindersImage src={GoogleRemindersImg} />
+              </GoogleReminders>
             </div>
             <div>
               <h2>Jira Ticket Board</h2>
-              {/* <hr/> */}
-              <JiraReminders></JiraReminders>
+              <JiraReminders>
+                <JiraRemindersImage src={JiraRemindersImg} />
+              </JiraReminders>
             </div>
           </Col1Container>
           <Col2Container>
             <div>
               <h2>Mavenlink Hours</h2>
-              <MavenLinkHours></MavenLinkHours>
+              <MavenLinkHours>
+                <MavenLinkHoursImage src={MavenLinkHoursImg} />
+              </MavenLinkHours>
             </div>
             <div>
               <h2>Quick Links</h2>

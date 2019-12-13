@@ -9,13 +9,20 @@ const add = (req, res) => {
     .then(createdTask => res.json(createdTask))
     .catch(error => {
       console.error(error);
-
       return res.json({ message: "Error" });
     });
 };
 
 const get = (req, res) => {
-  return Task.find({ complete: false })
+  return Task.find({ date: moment().format("MMM Do YY") })
+    .then(tasks => res.json(tasks))
+    .catch(error => res.json({ message: "Error" }));
+};
+
+const getArchive = (req, res) => {
+  const { date } = req.query;
+
+  return Task.find({ date })
     .then(tasks => res.json(tasks))
     .catch(error => res.json({ message: "Error" }));
 };
@@ -40,5 +47,6 @@ const remove = (req, res) => {
 module.exports = {
   get,
   add,
-  remove
+  remove,
+  getArchive
 };

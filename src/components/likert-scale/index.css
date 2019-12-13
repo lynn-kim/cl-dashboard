@@ -1,0 +1,127 @@
+.item {
+  display: inline-block;
+  padding-right: 10px;
+  padding-top: 20px;
+  padding-bottom: 15px;
+  width: 47%;
+  margin-bottom: 15px;
+  max-height: 100%;
+  border-radius: 10px;
+  overflow: auto;
+}
+
+.likert-option:nth-child(1):enabled {
+  color: #ba5f65;
+  border-color: #ba5f65;
+  font-family: "Montserrat";
+  font-size: 0.75em;
+}
+.likert-option:nth-child(2):enabled {
+  font-family: "Montserrat";
+  font-size: 0.75em;
+  color: #cb8589;
+  border-color: #cb8589;
+}
+.likert-option:nth-child(3):enabled {
+  font-family: "Montserrat";
+  font-size: 0.75em;
+  color: #97a470;
+  border-color: #97a470;
+}
+
+.likert-option:nth-child(4):enabled {
+  font-family: "Montserrat";
+  font-size: 0.75em;
+  color: #66743d;
+  border-color: #66743d;
+}
+
+.likert-option:hover:nth-child(1):enabled {
+  font-family: "Montserrat";
+  font-size: 0.75em;
+  border-color: #ba5f65;
+  background: #ba5f65;
+}
+
+.likert-option:hover:nth-child(2):enabled {
+  font-family: "Montserrat";
+  font-size: 0.75em;
+  border-color: #cb8589;
+  background: #cb8589;
+}
+
+.likert-option:hover:nth-child(3):enabled {
+  font-family: "Montserrat";
+  font-size: 0.75em;
+  border-color: #97a470;
+  background: #97a470;
+}
+
+.likert-option:hover:nth-child(4):enabled {
+  font-family: "Montserrat";
+  font-size: 0.75em;
+  border-color: #66743d;
+  background: #66743d;
+}
+
+.likert-option {
+  font-size: 0.9em;
+  border: 1px solid gray;
+  border-radius: 30px;
+  transition: all 0.3s;
+  margin: 5px;
+  background: transparent;
+  padding: 5px 0.7em;
+}
+
+.selected {
+  font-family: "Montserrat";
+  font-size: 0.75em;
+  font-size: 0.9em;
+  color: white;
+  border: 1px solid #f2a33a;
+  background: #f2a33a;
+  border-radius: 30px;
+  transition: all 0.3s;
+  margin: 5px;
+  padding: 5px 0.7em;
+}
+
+.likert-option:hover:enabled {
+  color: white !important;
+  transition: all 0.3s;
+}
+
+.likert-option:focus {
+  outline: 0;
+}
+
+.selected:focus {
+  outline: 0;
+}
+
+.submit-button:enabled {
+  color: #97a470;
+
+  text-align: right;
+  border-color: #97a470;
+}
+.submit-button {
+  color: gray;
+  font-weight: 500;
+  font-size: 0.9em;
+  text-align: right;
+  border-radius: 10px;
+  border: 1px solid gray;
+  padding: 5px 1em;
+  outline: 0;
+  font-family: "Montserrat";
+  font-size: 0.75em;
+}
+
+.submit-button:hover:enabled {
+  outline: 0;
+  color: white !important;
+  background: #97a470;
+  transition: all 0.3s;
+}
