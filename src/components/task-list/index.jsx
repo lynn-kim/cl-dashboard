@@ -25,6 +25,10 @@ class Form extends React.Component {
     };
   }
 
+  componentDidUpdate() {
+    this.listUpdate();
+  }
+
   componentDidMount() {
     this.listUpdate();
   }

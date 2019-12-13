@@ -78,18 +78,22 @@ const QuickLinks = styled.div`
   justify-content: space-between;
   color: #313660;
   font-size: 1em;
-  padding-bottom: 20px;
-  width: 90%;
+  padding: 20px;
+  width: 70%;
   height: 10vh;
   overflow: auto;
 `;
 
-const Links = styled.div`
+const Links = styled.a`
   display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0px !important;
   background-color: #e3e7ea;
   width: 90px;
   height: 90px;
+  border-radius: 5px;
+  color: #2b2b2b;
 `;
 
 class Resources extends React.Component {
@@ -121,15 +125,25 @@ class Resources extends React.Component {
             <div>
               <h2>Quick Links</h2>
               <QuickLinks>
-                <a href="https://google.com">
-                  <Links />
-                </a>
-                <a href="https://google.com">
-                  <Links />
-                </a>
-                <a href="https://google.com">
-                  <Links />
-                </a>
+                <Links
+                  href="https://drive.google.com/drive/folders/16BX-pWInc34OqQfDUyL4ZG57lOkgmGF6?usp=sharing"
+                  target="_blank"
+                >
+                  QA Drive
+                </Links>
+                <Links
+                  href="https://crowdlinker.atlassian.net/jira/your-work"
+                  target="_blank"
+                >
+                  Jira
+                </Links>
+
+                <Links
+                  href="https://crowdlinker.mavenlink.com/timesheets"
+                  target="_blank"
+                >
+                  Mavenlink
+                </Links>
               </QuickLinks>
             </div>
           </Col2Container>

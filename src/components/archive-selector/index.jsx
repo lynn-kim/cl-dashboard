@@ -54,6 +54,10 @@ class Archive extends Component {
     };
   }
 
+  componentDidUpdate() {
+    this.getArchives();
+  }
+
   componentDidMount() {
     // should pass in date selected from drop down
     this.getArchives();
