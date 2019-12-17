@@ -6,11 +6,15 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const db = mongoose.connection;
 
-mongoose.connect("mongodb://127.0.0.1:27018/", {
-  user: "cl-dashboard",
-  pass: "cl-dashboard",
-  useNewUrlParser: true,
-  dbName: "cl-dashboard"
+const mongoUri = process.env.MONGODB_URI
+  ? process.env.MONGODB_URI
+  : "mongodb://127.0.0.1:27018/";
+
+mongoose.connect(mongoUri, {
+  // user: "cl-dashboard",
+  // pass: "cl-dashboard123",
+  // useNewUrlParser: true,
+  // dbName: "cl-dashboard"
 });
 
 db.on("error", console.error.bind(console, "connection error:"));
