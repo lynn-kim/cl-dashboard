@@ -30,11 +30,11 @@ CL Dashboard uses the following technologies.
 3. Run `docker network create cl-dashboard`
 4. Run `docker compose build` 
 5. Use docker to set up the backend environment: run `docker-compose up` to run it in the background.
-6. In `cl-dashboard`, run `node server/index.js` to start the server.
+6. In `cl-dashboard`, run `npm run server` to start the server.
 7. You should be able to see the app on [http://localhost:5000](http://localhost:5000)
 
 ### Client 
-Run the front end with `npm start`. 
+Run the front end with `npm run client`. 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser. 
 
 ## Important Points to Note
