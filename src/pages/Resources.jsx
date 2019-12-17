@@ -66,7 +66,6 @@ const MavenLinkHours = styled.div`
   color: #313660;
   font-size: 1em;
   margin-bottom: 1em;
-  width: 85%;
   height: 50vh;
   max-height: 100%;
   background-color: #fafafe;
@@ -79,7 +78,7 @@ const QuickLinks = styled.div`
   color: #313660;
   font-size: 1em;
   padding: 20px;
-  width: 70%;
+  width: 80%;
   height: 10vh;
   overflow: auto;
 `;

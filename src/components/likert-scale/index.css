@@ -66,12 +66,12 @@
 
 .likert-option {
   font-size: 0.9em;
-  border: 1px solid gray;
+  border: 1.25px solid gray;
   border-radius: 30px;
   transition: all 0.3s;
   margin: 5px;
-  background: transparent;
-  padding: 5px 0.7em;
+  background: white;
+  padding: 5px 0.8em;
 }
 
 .selected {
