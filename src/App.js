@@ -16,6 +16,17 @@ class App extends React.Component {
     };
   }
 
+  componentDidMount = () => this.fetchAPIMessage();
+
+  fetchAPIMessage = async () => {
+    try {
+      const res = await fetch(`/api/message`);
+      const { message } = await res.json();
+      this.setState({ message });
+    } catch (err) {
+      console.error(err);
+    }
+  };
   newPage = (e, pageTitle) => {
     this.setState({ pageTitle });
   };
