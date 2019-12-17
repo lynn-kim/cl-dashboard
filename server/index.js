@@ -6,9 +6,7 @@ const app = express();
 const PORT = process.env.BACKEND_PORT || 5000;
 const db = mongoose.connection;
 
-const mongoUri = process.env.MONGODB_URI
-  ? process.env.MONGODB_URI
-  : "mongodb://127.0.0.1:27018/";
+const mongoUri = process.env.MONGODB_URI || "mongodb://127.0.0.1:27018/";
 
 mongoose.connect(mongoUri, {
   // user: "cl-dashboard",
