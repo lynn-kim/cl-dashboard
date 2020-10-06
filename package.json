@@ -24,7 +24,7 @@
     "styled-components": "^5.0.1",
     "typeface-montserrat": "0.0.75",
     "typeface-signika": "0.0.72",
-    "uuid": "^3.3.3"
+    "uuid": "^8.3.1"
   },
   "scripts": {
     "client": "react-scripts start",
